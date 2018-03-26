@@ -1,0 +1,6 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix bb: <http://mysiak/b-and-b#>.
+
+@base http://mysiak/b-and-b/
+
+bb:stephanie-douglas bb:mother bb:ridge-forrester.
