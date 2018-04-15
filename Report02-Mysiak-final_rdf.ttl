@@ -1,0 +1,90 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix fhkb: <http://www.example.com/genealogy.owl#> .
+
+@prefix bb: <http://mysiak/b-and-b#>.
+@prefix fm: <http://mysiak/family-relations#>.
+@prefix cp: <http://mysiak/company-details#>.
+@prefix geo: <http://mysiak/geography#>.
+@prefix ppref: <http://mysiak/personal-preferences#>.
+@prefix edu: <http://mysiak/education#>.
+
+cp:Company
+	rdf:type rdfs:Class;
+	rdfs:subClassOf foaf:Organization.
+
+edu:studied-at
+	rdf:type rdfs:Property;
+	rdfs:Domain foaf:Person;
+	rdfs:range rdfs:Resource.
+
+fm:children-raised
+	a rdfs:Property;
+	rdfs:Domain foaf:Person;
+	rdfs:range xsd:integer.
+
+ppref:likes-most
+	a rdfs:Property;
+	rdfs:Domain foaf:Person;
+	rdfs:range rdfs:Resource.
+
+cp:founded-by
+	a rdfs:Property;
+	rdfs:Domain cp:Company;
+	rdfs:range rdfs:Resource.
+
+cp:founded-year
+	a rdfs:Property;
+	rdfs:Domain cp:Company;
+	rdfs:range xsd:gYear.
+
+cp:field-of-interest
+	a rdfs:Property;
+	rdfs:Domain cp:Company;
+	rdfs:range rdfs:Literal.
+
+bb:stephanie-douglas
+	rdf:type foaf:Person; # a foaf:Person
+	foaf:name "Stephanie Forrester", "Stephanie Douglas";
+	edu:studied-at edu:northwestern-university;
+	fhkb:isWifeOf bb:eric-forrester;
+	fhkb:isMotherOf bb:ridge-forrester, bb:thorne-forrester, bb:felicia-forrester, bb:kristen-forrester;
+	fm:children-raised "4"^^xsd:integer;
+	ppref:likes-most bb:ridge-forrester;
+	rdfs:isDefinedBy "http://mysiak/b-and-b#".
+
+bb:forrester-creations
+	a cp:Company;
+	rdfs:label "Forrester Creations"^^xsd:string;
+	cp:founded-by bb:stephanie-douglas;
+	cp:founded-by bb:eric-forrester;
+	cp:founded-year "1965"^^xsd:gYear;
+	cp:field-of-interest "Fashion"^^xsd:string;
+	foaf:based_near geo:los-angeles.
+
+bb:massimo-marone
+	a foaf:Person;
+	foaf:name "Massimo Marone";
+	fhkb:isFatherOf bb:ridge-forrester;
+	rdfs:comment "The real father of Ridge OMG"^^xsd:string;
+	rdfs:see-also bb:stephanie-forrester, bb:ridge-forrester, bb:eric-forrester.
+
+bb:forrester-family
+	fm:family-members [
+		a rdf:Bag;
+		rdf:_1 bb:stephanie-douglas;
+		rdf:_2 bb:eric-forrester;
+		rdf:_3 bb:ridge-forrester;
+		rdf:_4 bb:thorne-forrester;
+		rdf:_5 bb:felicia-forrester;
+		rdf:_6 bb:kristen-forrester
+	].
+
+bb:eric-forrester-children-by-age
+	fm:children (
+		bb:thorne-forrester
+		bb:felicia-forrester
+		bb:kristen-forrester
+).
