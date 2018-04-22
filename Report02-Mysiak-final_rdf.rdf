@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<response>
+<extractors>
+<extractor>rdf-turtle</extractor>
+</extractors>
+<report>
+<message/>
+<error/>
+<issueReport>
+</issueReport>
+<validationReport>
+<issues>
+</issues>
+<ruleActivations>
+</ruleActivations>
+<errors>
+</errors>
+</validationReport>
+</report>
+<data>
+<![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:fhkb="http://www.example.com/genealogy.owl#"
+	xmlns:bb="http://mysiak/b-and-b#"
+	xmlns:fm="http://mysiak/family-relations#"
+	xmlns:cp="http://mysiak/company-details#"
+	xmlns:geo="http://mysiak/geography#"
+	xmlns:ppref="http://mysiak/personal-preferences#"
+	xmlns:edu="http://mysiak/education#">
+
+<rdf:Description rdf:about="http://mysiak/company-details#Company">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/education#studied-at">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+	<Domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/family-relations#children-raised">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+	<Domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/personal-preferences#likes-most">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+	<Domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/company-details#founded-by">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+	<Domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://mysiak/company-details#Company"/>
+	<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/company-details#founded-year">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+	<Domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://mysiak/company-details#Company"/>
+	<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/company-details#field-of-interest">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+	<Domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://mysiak/company-details#Company"/>
+	<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/b-and-b#stephanie-douglas">
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<foaf:name>Stephanie Forrester</foaf:name>
+	<foaf:name>Stephanie Douglas</foaf:name>
+	<edu:studied-at rdf:resource="http://mysiak/education#northwestern-university"/>
+	<fhkb:isWifeOf rdf:resource="http://mysiak/b-and-b#eric-forrester"/>
+	<fhkb:isMotherOf rdf:resource="http://mysiak/b-and-b#ridge-forrester"/>
+	<fhkb:isMotherOf rdf:resource="http://mysiak/b-and-b#thorne-forrester"/>
+	<fhkb:isMotherOf rdf:resource="http://mysiak/b-and-b#felicia-forrester"/>
+	<fhkb:isMotherOf rdf:resource="http://mysiak/b-and-b#kristen-forrester"/>
+	<fm:children-raised rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</fm:children-raised>
+	<ppref:likes-most rdf:resource="http://mysiak/b-and-b#ridge-forrester"/>
+	<isDefinedBy xmlns="http://www.w3.org/2000/01/rdf-schema#">http://mysiak/b-and-b#</isDefinedBy>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/b-and-b#forrester-creations">
+	<rdf:type rdf:resource="http://mysiak/company-details#Company"/>
+	<label xmlns="http://www.w3.org/2000/01/rdf-schema#">Forrester Creations</label>
+	<cp:founded-by rdf:resource="http://mysiak/b-and-b#stephanie-douglas"/>
+	<cp:founded-by rdf:resource="http://mysiak/b-and-b#eric-forrester"/>
+	<cp:founded-year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1965</cp:founded-year>
+	<cp:field-of-interest>Fashion</cp:field-of-interest>
+	<foaf:based_near rdf:resource="http://mysiak/geography#los-angeles"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/b-and-b#massimo-marone">
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<foaf:name>Massimo Marone</foaf:name>
+	<fhkb:isFatherOf rdf:resource="http://mysiak/b-and-b#ridge-forrester"/>
+	<comment xmlns="http://www.w3.org/2000/01/rdf-schema#">The real father of Ridge OMG</comment>
+	<see-also xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://mysiak/b-and-b#stephanie-forrester"/>
+	<see-also xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://mysiak/b-and-b#ridge-forrester"/>
+	<see-also xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://mysiak/b-and-b#eric-forrester"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1c9ar2suqx319116">
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
+	<rdf:_1 rdf:resource="http://mysiak/b-and-b#stephanie-douglas"/>
+	<rdf:_2 rdf:resource="http://mysiak/b-and-b#eric-forrester"/>
+	<rdf:_3 rdf:resource="http://mysiak/b-and-b#ridge-forrester"/>
+	<rdf:_4 rdf:resource="http://mysiak/b-and-b#thorne-forrester"/>
+	<rdf:_5 rdf:resource="http://mysiak/b-and-b#felicia-forrester"/>
+	<rdf:_6 rdf:resource="http://mysiak/b-and-b#kristen-forrester"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/b-and-b#forrester-family">
+	<fm:family-members rdf:nodeID="node1c9ar2suqx319116"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1c9ar2suqx319117">
+	<rdf:first rdf:resource="http://mysiak/b-and-b#thorne-forrester"/>
+	<rdf:rest rdf:nodeID="node1c9ar2suqx319118"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1c9ar2suqx319118">
+	<rdf:first rdf:resource="http://mysiak/b-and-b#felicia-forrester"/>
+	<rdf:rest rdf:nodeID="node1c9ar2suqx319119"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1c9ar2suqx319119">
+	<rdf:first rdf:resource="http://mysiak/b-and-b#kristen-forrester"/>
+	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mysiak/b-and-b#eric-forrester-children-by-age">
+	<fm:children rdf:nodeID="node1c9ar2suqx319117"/>
+</rdf:Description>
+
+</rdf:RDF>]]>
+</data>
+</response>
